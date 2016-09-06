@@ -1,2 +1,2 @@
 # react-redux-express-webpack
-Learnig React Redux Express Webpack ES6 Social Log In NPM Scripts Automation Test
+Learnig React Redux Express Webpack Hot Reloadig ES6 Social Log In NPM Scripts Automation Test
