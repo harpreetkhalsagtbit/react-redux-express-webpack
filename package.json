@@ -4,7 +4,11 @@
   "description": "Learnig React Redux Express Webpack ES6 Social Log In NPM Scripts Automation Test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "babel-node tools/startMessage.js",
+    "start": "npm-run-all --parallel open:src lint:watch",
+    "open:src": "babel-node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
@@ -17,19 +21,29 @@
   },
   "homepage": "https://github.com/harpreetkhalsagtbit/react-redux-express-webpack#readme",
   "dependencies": {
+    "babel-polyfill": "^6.13.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "colors": "^1.1.2",
     "eslint": "^3.3.1",
+    "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-react": "^6.1.2",
+    "eslint-watch": "^2.1.14",
+    "express": "^4.14.0",
+    "ip": "^1.1.3",
+    "npm-run-all": "^3.1.0",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.0"
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2"
   }
 }
