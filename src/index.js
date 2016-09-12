@@ -1,32 +1,15 @@
+import 'babel-polyfill';
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import App from './components/App';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
+// import './styles/styles.css'; // Webpack can import CSS files too!
+// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-export default class App extends Component {
-	constructor(props, context) {
-		super(props, context);
+render((
+		<Router history={browserHistory} routes={routes} />
+	), document.getElementById('app')
+)
 
-		this.state = {
-			counter: 0
-		};
-
-	  	var _this = this;
-	  	var counter = 0;
-
-	  	setInterval(function() {
-	  		_this.setState({
-	  			"counter": counter++
-	  		})
-	  	}, 1000)
-	}
-
-  render() {
-    return (
-    <div>
-      <h1>Hello, World.{this.state.counter}</h1>
-      <h2>Preserving State, Everytime I update</h2>
-    </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+// ReactDOM.render(<App />, document.getElementById('app'));
